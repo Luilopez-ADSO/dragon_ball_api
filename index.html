@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Explora personajes de Dragon Ball usando una API pública.">
+  <title>Dragon Ball api</title>
+  <link rel="stylesheet" href="css/styles.css">
+  <script src="js/app.js" defer></script>
+</head>
+<body>
+  <header class="hero">
+    <nav class="nav container">
+      <a class="brand" href="index.html">DRAGON BALL <span>API</span></a>
+      <span class="api-status"><span class="status-dot"></span> API conectada desde el navegador</span>
+    </nav>
+    <div class="hero-content container">
+      <p class="eyebrow">UNIVERSO DRAGON BALL</p>
+      <h1>Conoce a tus <span>personajes</span> favoritos</h1>
+      <p class="hero-description">Busca guerreros, descubre sus características y explora el universo Dragon Ball.</p>
+      <form id="search-form" class="search-form">
+        <label class="sr-only" for="search-input">Nombre del personaje</label>
+        <input id="search-input" type="search" placeholder="Busca por nombre, por ejemplo Goku..." autocomplete="off">
+        <button type="submit">Buscar</button>
+      </form>
+      <button id="show-all" class="text-button" type="button">Mostrar todos los personajes</button>
+    </div>
+  </header>
+
+  <main class="container main-content">
+    <section class="section-heading">
+      <div>
+        <p class="eyebrow">LA ENCICLOPEDIA</p>
+        <h2 id="results-title">Personajes</h2>
+        <p id="results-description">Datos consultados desde Dragon Ball API.</p>
+      </div>
+      <div id="result-count" class="result-count" aria-live="polite"></div>
+    </section>
+
+    <div id="message" class="message" role="status" aria-live="polite">Cargando personajes...</div>
+    <section id="characters-grid" class="characters-grid" aria-label="Lista de personajes"></section>
+
+    <div class="pagination">
+      <button id="previous-page" class="secondary-button" type="button" disabled>← Anterior</button>
+      <span id="page-indicator">Página 1</span>
+      <button id="next-page" class="secondary-button" type="button">Siguiente →</button>
+    </div>
+  </main>
+
+  <dialog id="character-dialog" class="character-dialog">
+    <button id="close-dialog" class="close-dialog" type="button" aria-label="Cerrar detalle">×</button>
+    <div id="character-detail"></div>
+  </dialog>
+
+  <footer class="footer">
+    <div class="container footer-inner">
+      <div><strong>DRAGON BALL EXPLORER</strong><p>Proyecto académico de consumo de API pública.</p></div>
+      <a href="https://dragonball-api.com/api-docs" target="_blank" rel="noopener noreferrer">Documentación de la API ↗</a>
+    </div>
+  </footer>
+</body>
+</html>
